@@ -1,0 +1,26 @@
+server:
+  port: 5088
+
+
+spring:
+  profiles:
+    active: dev-test
+  messages:
+    encoding: UTF-8
+    basename: bundle/messages
+    always-use-message-format: true
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+        ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
